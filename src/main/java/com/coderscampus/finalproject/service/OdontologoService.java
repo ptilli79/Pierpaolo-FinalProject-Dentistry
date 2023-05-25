@@ -14,12 +14,13 @@ import java.util.Optional;
 @Service
 public class OdontologoService{
     //creo repository y lo inyecto por constructor
+	@Autowired
     private OdontologoRepository odontologoRepository;
 
-    @Autowired
-    public OdontologoService(OdontologoRepository odontologoRepository) {
-        this.odontologoRepository = odontologoRepository;
-    }
+    //@Autowired
+    //public OdontologoService(OdontologoRepository odontologoRepository) {
+    //    this.odontologoRepository = odontologoRepository;
+    //}
 
     //métodos
     public Odontologo guardar(Odontologo odontologo){
@@ -28,6 +29,7 @@ public class OdontologoService{
     public List<Odontologo> buscarTodos(){
         return odontologoRepository.findAll();
     }
+    
     public Optional<Odontologo> busquedaXid(Long id) throws ResourceNotFoundException{
         Optional<Odontologo> odontologo = odontologoRepository.findById(id);
         if(odontologo.isPresent()){
@@ -37,6 +39,19 @@ public class OdontologoService{
             throw new ResourceNotFoundException("El odontologo con id " + id + " no existe");
         }
     }
+    
+    public Optional<Odontologo> busquedaXmatricula(String matricula) throws ResourceNotFoundException{
+        Optional<Odontologo> odontologo = odontologoRepository.findByMatricula(matricula);
+        if(odontologo.isPresent()){
+        	throw new ResourceNotFoundException("El odontologo con id " + matricula + " ya existe");
+        }
+        else {
+            
+            return null;
+        }
+    }
+    
+    
 
     public Odontologo actualizar(Odontologo odontologo) throws ResourceNotFoundException{
         Optional<Odontologo> odontologoAActualizar= odontologoRepository.findById(odontologo.getId());

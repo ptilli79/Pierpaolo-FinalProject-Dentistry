@@ -1,6 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
+	<meta name="_csrf" th:content="${_csrf.token}" />
+    <meta name="_csrf_parameter" th:content="${_csrf.parameterName}" />
     <title>Hart Dental</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -37,9 +39,9 @@
                             Dentists
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/odontologosList.html">All Dentists</a></li>
-                            <li><a class="dropdown-item" href="/odontologoAlta.html">Add Dentist</a></li>
-                        </ul>
+                        	<li><a class="dropdown-item" href="/odontologosList">All Dentists</a></li>
+                            <li><a class="dropdown-item" href="/odontologoAlta">Add Dentist</a></li>
+                    	</ul>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">

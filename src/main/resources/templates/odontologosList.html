@@ -1,7 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <title>Estudiantes</title>
+    <meta th:name="_csrf" th:content="${_csrf.token}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
@@ -10,14 +11,16 @@
             integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
             crossorigin="anonymous"
     />
+    
     <script src="https://kit.fontawesome.com/bf8631ba4b.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/get_odontologo.js"></script>
-    <script type="text/javascript" src="/js/update_odontologo.js"></script>
-    <script type="text/javascript" src="/js/delete_odontologo.js"></script>
+    <script type="text/javascript" src="/js/update_odontologo2.js"></script>
+    <script type="text/javascript" src="/js/delete_odontologo2.js"></script>
     <link href="./css/nav-footer.css" rel="stylesheet">
     <link href="./css/odontologosList.css" rel="stylesheet">
 </head>
 <body>
+<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}" />
 <div id="topbar" class="d-flex align-items-center justify-content-center fixed-top mb-3 pt-2"><p class="">We are open for all dental procedures and are working safely. Call or text our office at (913) 491-6663 to learn more about our updated office protocols.</p></div>
 <header>
     <!-- NAV BAR-->
@@ -40,8 +43,8 @@
                             Dentists
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/odontologosList.html">All Dentists</a></li>
-                            <li><a class="dropdown-item" href="/odontologoAlta.html">Add Dentist</a></li>
+                            <li><a class="dropdown-item" href="/odontologosList">All Dentists</a></li>
+                            <li><a class="dropdown-item" href="/odontologoAlta">Add Dentist</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

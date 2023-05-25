@@ -1,6 +1,5 @@
 package com.coderscampus.finalproject.security;
 
-import java.util.Collection;
 
 
 import org.springframework.security.core.userdetails.UserDetails;
@@ -14,12 +13,12 @@ public class CustomSecurityUser extends Usuario implements UserDetails {
   public CustomSecurityUser () {}
   
   public CustomSecurityUser(Usuario user) {
-    //this.setAuthorities(user.getAuthorities());
+    this.setAuthorities(user.getAuthorities());
     this.setId(user.getId());
     this.setPassword(user.getPassword());
     this.setUsername(user.getUsername());
   }
-
+  
 @Override
   public boolean isAccountNonExpired() {
     return true;

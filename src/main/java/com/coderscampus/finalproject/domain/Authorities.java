@@ -11,6 +11,8 @@ public class Authorities implements GrantedAuthority {
   
   @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
   private Long id;
+  
+  @Column
   private String authority;
   
   @ManyToOne
@@ -24,7 +26,6 @@ public class Authorities implements GrantedAuthority {
   public void setId(Long id) {
     this.id = id;
   }
-  
   
   public String getAuthority() {
     return authority;

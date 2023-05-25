@@ -68,7 +68,7 @@
     <div class="login-container">
         <h2>Login</h2>
         <form action="" method="post">
-            <!--  <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/> -->
+            <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
             <div th:if="${param.error != null}" class="error-message">
                 Failed to login.
                 <div th:if="${SPRING_SECURITY_LAST_EXCEPTION != null}">

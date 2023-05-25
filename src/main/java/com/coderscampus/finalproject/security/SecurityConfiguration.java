@@ -43,8 +43,9 @@ public class SecurityConfiguration{
                     //.anyRequest().hasRole("USER")
 //            )
         .authorizeHttpRequests(authorize -> authorize
-        .requestMatchers(HttpMethod.POST, "/odontologos").permitAll()
-        .anyRequest().authenticated()
+        .requestMatchers("/odontologos/**", "/odontologoAlta/**", "/odontologosList/**" ).permitAll()
+        //.anyRequest().authenticated()
+        .anyRequest().hasRole("USER")
         
     )
             .formLogin(formLogin ->
@@ -53,8 +54,8 @@ public class SecurityConfiguration{
                     .defaultSuccessUrl("/index")
                     .permitAll()
                     
-            )
-            .csrf().disable();
+            );
+            //.csrf().disable();
         
         return http.build();
     }

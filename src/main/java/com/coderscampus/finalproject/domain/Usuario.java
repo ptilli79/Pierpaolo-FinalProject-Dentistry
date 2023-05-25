@@ -1,14 +1,8 @@
 package com.coderscampus.finalproject.domain;
 
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
-
 
 import jakarta.persistence.*;
-import java.util.Collection;
-import java.util.Collections;
+
 import java.util.HashSet;
 import java.util.Set;
 
@@ -20,18 +14,18 @@ public class Usuario {
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    //@Column
+    @Column
     private String nombre;
-    //@Column
+    @Column
     private String username;
     @Column
     private String email;
     @Column
     private String password;
     @Enumerated(EnumType.STRING)
+    
     private RolUsuario usuarioRole;
     
-    @Column
     @OneToMany(fetch=FetchType.LAZY, cascade=CascadeType.ALL, mappedBy="user")
     private Set<Authorities> authorities = new HashSet<>();
     
