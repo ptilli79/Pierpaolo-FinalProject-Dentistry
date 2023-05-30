@@ -22,7 +22,7 @@ public class Paciente {
     @Column
     private String email;
     @Column
-    private Integer dni;
+    private String dni;
     @Column
     private LocalDate fechaNacimiento;
 
@@ -70,11 +70,11 @@ public class Paciente {
         this.email = email;
     }
 
-    public Integer getDni() {
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(Integer dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

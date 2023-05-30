@@ -93,4 +93,14 @@ public class OdontologoController {
     public String ondontologoList () {
         return "odontologosList";
       }   
+    
+    @GetMapping("/pacienteAlta")
+    public String pacienteAlta () {
+        return "pacienteAlta";
+      }
+    
+    @GetMapping("/pacientesList")
+    public String pacientesList () {
+        return "pacientesList";
+      }   
 }

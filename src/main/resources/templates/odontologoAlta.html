@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<!-- <html xmlns:th="http://www.thymeleaf.org" lang="es"> -->
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="es">
+<!-- <html lang="es"> -->
     <head>
-    	<meta name="_csrf" th:content="${_csrf.token}" />
+    	<meta th:name="_csrf" th:content="${_csrf.token}" />
     	<meta name="_csrf_parameter" th:content="${_csrf.parameterName}" />
         <title>Clinica Dental</title>
         <meta charset="utf-8">

@@ -2,7 +2,7 @@ window.addEventListener('load', function () {
 
     const formulario = document.querySelector('#update_odontologo_form');
 
-    formulario.addEventListener('submit', function (event) {
+    	formulario.addEventListener('submit', function (event) {
         let odontologoId = document.querySelector('#odontologo_id').value;
 
         const formData = {

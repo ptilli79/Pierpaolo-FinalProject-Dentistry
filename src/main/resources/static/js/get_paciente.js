@@ -44,7 +44,7 @@ window.addEventListener('load', function () {
 
     (function(){
       let pathname = window.location.pathname;
-      if (pathname == "pacienteList.html") {
+      if (pathname == "pacientesList.html") {
           document.querySelector(".nav .nav-item a:last").addClass("active");
       }
     })

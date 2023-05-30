@@ -1,7 +1,9 @@
 <!DOCTYPE html>
-<html lang="es">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<!-- <html lang="es"> -->
 <head>
     <title>Clinica Dental</title>
+    <meta th:name="_csrf" th:content="${_csrf.token}" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link
@@ -12,8 +14,8 @@
     />
     <script src="https://kit.fontawesome.com/bf8631ba4b.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="/js/get_paciente.js"></script>
-    <script type="text/javascript" src="/js/update_paciente.js"></script>
-    <script type="text/javascript" src="/js/delete_paciente.js"></script>
+    <script type="text/javascript" src="/js/update_paciente2.js"></script>
+    <script type="text/javascript" src="/js/delete_paciente2.js"></script>
     <link href="./css/nav-footer.css" rel="stylesheet">
     <link href="./css/pacienteList.css" rel="stylesheet">
 </head>
@@ -23,7 +25,7 @@
     <!-- NAV BAR-->
     <nav class="navbar navbar-expand-lg bg-light mt-4">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">H A R T | D E N T A L </a>
+            <a class="navbar-brand" href="/index">H A R T | D E N T A L </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
                 <i class="fa-solid fa-bars toggler-icon"></i>
             </button>
@@ -40,8 +42,8 @@
                             Dentists
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/odontologosList.html">All Dentists</a></li>
-                            <li><a class="dropdown-item" href="/odontologoAlta.html">Add Dentist</a></li>
+                            <li><a class="dropdown-item" href="/odontologosList">All Dentists</a></li>
+                            <li><a class="dropdown-item" href="/odontologoAlta">Add Dentist</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -49,8 +51,8 @@
                             Patients
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="/pacienteList.html">All Patients</a></li>
-                            <li><a class="dropdown-item" href="/pacienteAlta.html">Add Patient</a></li>
+                            <li><a class="dropdown-item" href="/pacientesList">All Patients</a></li>
+                            <li><a class="dropdown-item" href="/pacienteAlta">Add Patient</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">

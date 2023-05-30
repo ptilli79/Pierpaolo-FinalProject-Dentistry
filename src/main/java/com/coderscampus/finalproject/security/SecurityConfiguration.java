@@ -43,7 +43,7 @@ public class SecurityConfiguration{
                     //.anyRequest().hasRole("USER")
 //            )
         .authorizeHttpRequests(authorize -> authorize
-        .requestMatchers("/odontologos/**", "/odontologoAlta/**", "/odontologosList/**" ).permitAll()
+        .requestMatchers("/odontologos/**", "/odontologoAlta/**", "/odontologosList/**", "/pacienteAlta/**", "/pacientesList/**" ).permitAll()
         //.anyRequest().authenticated()
         .anyRequest().hasRole("USER")
         
